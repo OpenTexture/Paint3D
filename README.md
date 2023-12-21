@@ -1,7 +1,7 @@
 
 
 <div align="center">
-    <h1> <a>ShapeGPT: 3D Shape Generation with A Unified Multi-modal Language Model</a></h1>
+    <h1> <a>Paint3D: Paint Anything 3D with Lighting-Less Texture Diffusion Models</a></h1>
 
 <p align="center">
   <a >Project Page</a> •
@@ -13,6 +13,7 @@
 
 </div>
 
+https://youtu.be/T4GUOLvO1n0?si=xIxG4mPyu03VPkj4
 
 ##  Introduction
 
