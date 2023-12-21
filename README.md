@@ -13,7 +13,9 @@
 
 </div>
 
-https://youtu.be/T4GUOLvO1n0?si=xIxG4mPyu03VPkj4
+
+https://github.com/OpenTexture/Paint3D/assets/18525299/9aef7eeb-a783-482c-87d5-78055da3bfc0
+
 
 ##  Introduction
 
