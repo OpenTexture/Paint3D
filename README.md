@@ -4,8 +4,8 @@
     <h1> <a>Paint3D: Paint Anything 3D with Lighting-Less Texture Diffusion Models</a></h1>
 
 <p align="center">
-  <a >Project Page</a> •
-  <a >Arxiv</a> •
+  <a href=https://paint3d.github.io/>Project Page</a> •
+  <a href=https://arxiv.org/abs/2312.13913>Arxiv</a> •
   Demo •
   <a href="#️-faq">FAQ</a> •
   <a href="#-citation">Citation</a>
