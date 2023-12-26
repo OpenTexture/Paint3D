@@ -19,7 +19,7 @@ https://github.com/OpenTexture/Paint3D/assets/18525299/9aef7eeb-a783-482c-87d5-7
 
 ##  Introduction
 
-Paint3D is a novel coarse-to-fine generative framework that is capable of producing high-resolution, lighting-less, and diverse 2K UV texture maps for untextured 3D meshes conditioned on text or image inputs。
+Paint3D is a novel coarse-to-fine generative framework that is capable of producing high-resolution, lighting-less, and diverse 2K UV texture maps for untextured 3D meshes conditioned on text or image inputs.
 
 <details open="open">
     <summary><b>Technical details</b></summary>
