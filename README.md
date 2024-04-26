@@ -30,33 +30,85 @@ We present Paint3D, a novel coarse-to-fine generative framework that is capable 
 </details>
 
 ## 🚩 News
-
+- [2024/04/26] Upload code 🔥🔥🔥
 - [2023/12/21] Upload paper and init project 🔥🔥🔥
 
 ## ⚡ Quick Start
+### Setup
+The code is tested on Centos 7 with PyTorch 1.12.1 CUDA 11.6 installed. Please follow the following steps to setup environment.
+```
+# install python environment
+conda env create -f environment.yaml
+
+# install kaolin
+pip install kaolin==0.13.0 -f https://nvidia-kaolin.s3.us-east-2.amazonaws.com/{TORCH_VER}_{CUDA_VER}.html
+```
+
+
+### Usage
+For UV-position controlnet, you can find it [here](https://huggingface.co/GeorgeQi/Paint3d_UVPos_Control).
+
+To use the other ControlNet models, please download it from the [hugging face page](https://huggingface.co/lllyasviel), and modify the controlnet path in the config file.
+
+
+Then, you can generate coarse texture via:
+```
+python pipeline_paint3d_stage1.py \
+ --sd_config controlnet/config/depth_based_inpaint_template.yaml \
+ --render_config paint3d/config/train_config_paint3d.py \
+ --mesh_path demo/objs/Suzanne_monkey/Suzanne_monkey.obj \
+ --outdir outputs/stage1
+```
+
+and the refined texture via:
+```
+python pipeline_paint3d_stage2.py \
+--sd_config controlnet/config/UV_based_inpaint_template.yaml \
+--render_config paint3d/config/train_config_paint3d.py \
+--mesh_path demo/objs/Suzanne_monkey/Suzanne_monkey.obj \
+--texture_path outputs/stage1/res-0/albedo.png \
+--outdir outputs/stage2
+```
+
+
+Optionally, you can also generate texture results with UV position controlnet only, for example:
+```
+python pipeline_UV_only.py \
+ --sd_config controlnet/config/UV_gen_template.yaml \
+ --render_config paint3d/config/train_config_paint3d.py \
+ --mesh_path demo/objs/teapot/scene.obj \
+ --outdir outputs/test_teapot
+```
+
+
+### Model Converting
+For checkpoints in [Civitai](https://civitai.com/) with only a .safetensor file, you can use the following script to convert and use them. 
+```
+python tools/convert_original_stable_diffusion_to_diffusers.py \
+--checkpoint_path YOUR_LOCAL.safetensors \
+--dump_path model_cvt/ \
+--from_safetensors
+```
+
 
 <!-- <details>
-  <summary><b>Setup and download</b></summary>
-
-</details> -->
-
-## ▶️ Demo
-
-<!-- <details>
+  ## ▶️ Demo
   <summary><b>Webui</b></summary>
 
 
 </details> -->
 
-## 👀 Visualization
 
-## ⚠️ FAQ
+<!-- <details>
+  ## 👀 Visualization
+
+  ## ⚠️ FAQ
 
 <details> <summary><b>Question-and-Answer</b></summary>
-    
 
-</details>
-</details>
+
+</details> -->
+
 
 ## 📖 Citation
 ```bib

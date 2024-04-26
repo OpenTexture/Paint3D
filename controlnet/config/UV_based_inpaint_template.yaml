@@ -1,0 +1,47 @@
+
+inpaint:
+  "sd_model_key": "xxx/stable-diffusion-v1-5"
+  # run
+  "image_path":
+  "mask_path":
+  "prompt":  "UV map, monkey head, Sci-Fi digital painting, high quality"
+  "negative_prompt": "strong light, Bright light, intense light, dazzling light, brilliant light, radiant light, Shade, darkness, silhouette, dimness, obscurity, shadow, glasses"
+  "seed": -1
+  "width": 1024
+  "height": 1024
+  "num_images_per_prompt": 1
+  "guidance_scale": 3.0
+  "num_inference_steps": 20
+  "denoising_strength": 1.0
+  "controlnet_units":
+    - "preprocessor": "none"
+      "controlnet_key": "xxx/uvpos_cvt"
+      "condition_image_path":
+      "weight": 1.0
+    - "preprocessor": "inpaint_global_harmonious"
+      "controlnet_key": "xxx/control_v11p_sd15_inpaint"
+      "condition_image_path":
+      "weight": 0.5
+
+img2img:
+  "sd_model_key": "xxx/realisticVisionV13_v13_cvt"
+  # run
+  "image_path":
+  "prompt":  "UV map, (Sci-Fi digital painting:1.3), high quality, best quality"
+  "negative_prompt": "blur, low quality, noisy image, over-exposed, shadow"
+  "seed": -1
+  "width": 1024
+  "height": 1024
+  "num_images_per_prompt": 1
+  "guidance_scale": 7.0
+  "num_inference_steps": 20
+  "denoising_strength": 0.75
+  "controlnet_units":
+    - "preprocessor": "none"
+      "controlnet_key": "xxx/uvpos_cvt"
+      "condition_image_path":
+      "weight": 1.0
+    - "preprocessor": "none"
+      "controlnet_key": "xxx/control_v11f1e_sd15_tile"
+      "condition_image_path":
+      "weight": 1.0
