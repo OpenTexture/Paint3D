@@ -1,6 +1,6 @@
 
 txt2img:
-  "sd_model_key": "xxx/stable-diffusion-v1-5"
+  "sd_model_key": "runwayml/stable-diffusion-v1-5"
   "prompt": "UVmap, (blue and white porcelain:1.3), teapot, high quality"
   "negative_prompt": "blur, low quality, noisy image, over-exposed"
   "seed": -1
@@ -11,6 +11,6 @@ txt2img:
   "num_inference_steps": 20
   "controlnet_units":
     - "preprocessor": "none"
-      "controlnet_key": "xxx/uvpos_cvt"
+      "controlnet_key": "GeorgeQi/Paint3d_UVPos_Control"
       "condition_image_path":
       "weight": 1.0

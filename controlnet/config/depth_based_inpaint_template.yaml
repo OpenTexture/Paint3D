@@ -1,6 +1,6 @@
 
 txt2img:
-  "sd_model_key": "xxx/stable-diffusion-v1-5"
+  "sd_model_key": "runwayml/stable-diffusion-v1-5"
   "prompt": "turn around, monkey head, (Sci-Fi digital painting:1.5), colorful, painting, high quality"
   "negative_prompt": "strong light, Bright light, intense light, dazzling light, brilliant light, radiant light, Shade, darkness, silhouette, dimness, obscurity, shadow, glasses"
   "seed": 1713428430
@@ -11,13 +11,13 @@ txt2img:
   "num_inference_steps": 20
   "controlnet_units":
     - "preprocessor": "none"
-      "controlnet_key": "xxx/sd-controlnet-depth"
+      "controlnet_key": "lllyasviel/control_v11f1p_sd15_depth"
       "condition_image_path":
       "weight": 1.0
 
 
 inpaint:
-  "sd_model_key": "xxx/stable-diffusion-v1-5"
+  "sd_model_key": "runwayml/stable-diffusion-v1-5"
   # run
   "image_path":
   "mask_path":
@@ -32,11 +32,11 @@ inpaint:
   "denoising_strength": 1.0
   "controlnet_units":
     - "preprocessor": "none"
-      "controlnet_key": "xxx/sd-controlnet-depth"
+      "controlnet_key": "lllyasviel/control_v11f1p_sd15_depth"
       "condition_image_path":
       "weight": 1.0
     - "preprocessor": "inpaint_global_harmonious"
-      "controlnet_key": "xxx/control_v11p_sd15_inpaint"
+      "controlnet_key": "lllyasviel/control_v11p_sd15_inpaint"
       "condition_image_path": ""
       "weight": 0.5
 
