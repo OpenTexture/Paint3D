@@ -24,7 +24,7 @@ inpaint:
       "weight": 0.5
 
 img2img:
-  "sd_model_key": "your path to realisticVisionV13 converted to safetensors"
+  "sd_model_key": "GeorgeQi/realisticVisionV13_v13"
   # run
   "image_path":
   "prompt":  "UV map, (Sci-Fi digital painting:1.3), high quality, best quality"
