@@ -45,7 +45,7 @@ pip install kaolin==0.13.0 -f https://nvidia-kaolin.s3.us-east-2.amazonaws.com/{
 ```
 
 
-### Usage
+### Txt condition
 For UV-position controlnet, you can find it [here](https://huggingface.co/GeorgeQi/Paint3d_UVPos_Control).
 
 To use the other ControlNet models, please download it from the [hugging face page](https://huggingface.co/lllyasviel), and modify the controlnet path in the config file.
@@ -79,6 +79,33 @@ python pipeline_UV_only.py \
  --mesh_path demo/objs/teapot/scene.obj \
  --outdir outputs/test_teapot
 ```
+
+
+### Image condition
+
+With a image condition, you can generate coarse texture via:
+```
+python pipeline_paint3d_stage1.py \
+ --sd_config controlnet/config/depth_based_inpaint_template.yaml \
+ --render_config paint3d/config/train_config_paint3d.py \
+ --mesh_path demo/objs/Suzanne_monkey/Suzanne_monkey.obj \
+ --prompt " " \
+ --ip_adapter_image_path demo/objs/Suzanne_monkey/img_prompt.png \
+ --outdir outputs/img_stage1
+```
+
+and the refined texture via:
+```
+python pipeline_paint3d_stage2.py \
+--sd_config controlnet/config/UV_based_inpaint_template.yaml \
+--render_config paint3d/config/train_config_paint3d.py \
+--mesh_path demo/objs/Suzanne_monkey/Suzanne_monkey.obj \
+--texture_path outputs/img_stage1/res-0/albedo.png \
+--prompt " " \
+ --ip_adapter_image_path demo/objs/Suzanne_monkey/img_prompt.png \
+--outdir outputs/img_stage2
+```
+
 
 
 ### Model Converting
