@@ -16,9 +16,10 @@ class img2imgControlNet():
             controlnet_list.append(controlnet)
         pipe = StableDiffusionControlNetImg2ImgPipeline.from_pretrained(config.sd_model_key, controlnet=controlnet_list,
                                                                  torch_dtype=torch_dtype).to("cuda")
+        if config.ip_adapter_image_path:
+            pipe.load_ip_adapter("h94/IP-Adapter", subfolder="models", weight_name="ip-adapter_sd15.safetensors")
         pipe.scheduler = EulerAncestralDiscreteScheduler.from_pretrained(config.sd_model_key, subfolder="scheduler")
         pipe.safety_checker = None
-        pipe.feature_extractor = None
         pipe.requires_safety_checker = False
         # pipe.enable_xformers_memory_efficient_attention()
         pipe.enable_model_cpu_offload()
@@ -49,12 +50,19 @@ class img2imgControlNet():
             conditioning_scales.append(cnet_unit.weight)
         conditioning_scales = conditioning_scales[0] if len(conditioning_scales) == 1 else conditioning_scales
 
+        # ip-adapter
+        ip_adapter_image = None
+        if config.ip_adapter_image_path:
+            ip_adapter_image = Image.open(config.ip_adapter_image_path)
+            print("using ip adapter...")
+
         seed = int(time.time()) if config.seed == -1 else config.seed
         generator = torch.manual_seed(int(seed))
         res_image = self.pipe(config.prompt,
                               negative_prompt=config.negative_prompt,
                               image=image,
                               control_image=control_img,
+                              ip_adapter_image=ip_adapter_image,
                               height=h,
                               width=w,
                               num_images_per_prompt=config.num_images_per_prompt,

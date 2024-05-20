@@ -119,6 +119,9 @@ def init_process(opt):
     render_cfg.log.exp_path = str(outdir)
     if opt.prompt is not None:
         sd_cfg.txt2img.prompt = opt.prompt
+    if opt.ip_adapter_image_path is not None:
+        sd_cfg.txt2img.ip_adapter_image_path = opt.ip_adapter_image_path
+        sd_cfg.inpaint.ip_adapter_image_path = opt.ip_adapter_image_path
     if opt.mesh_path is not None:
         render_cfg.guide.shape_path = opt.mesh_path
     if opt.texture_path is not None:
@@ -145,6 +148,12 @@ def parse():
     )
     parser.add_argument(
         "--prompt",
+        type=str,
+        help="prompt",
+        default=None,
+    )
+    parser.add_argument(
+        "--ip_adapter_image_path",
         type=str,
         help="prompt",
         default=None,
