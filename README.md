@@ -139,13 +139,12 @@ python tools/convert_original_stable_diffusion_to_diffusers.py \
 
 ## 📖 Citation
 ```bib
-@misc{zeng2023paint3d,
-      title={Paint3D: Paint Anything 3D with Lighting-Less Texture Diffusion Models},
-      author={Xianfang Zeng and Xin Chen and Zhongqi Qi and Wen Liu and Zibo Zhao and Zhibin Wang and BIN FU and Yong Liu and Gang Yu},
-      year={2023},
-      eprint={2312.13913},
-      archivePrefix={arXiv},
-      primaryClass={cs.CV}
+@inproceedings{zeng2024paint3d,
+  title={Paint3d: Paint anything 3d with lighting-less texture diffusion models},
+  author={Zeng, Xianfang and Chen, Xin and Qi, Zhongqi and Liu, Wen and Zhao, Zibo and Wang, Zhibin and Fu, Bin and Liu, Yong and Yu, Gang},
+  booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition},
+  pages={4252--4262},
+  year={2024}
 }
 ```
 
