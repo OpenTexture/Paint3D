@@ -136,6 +136,11 @@ python tools/convert_original_stable_diffusion_to_diffusers.py \
 
 </details> -->
 
+## 🧩 Projects that use Paint3D
+If you develop/use Paint3D in your projects, welcome to let me know.
+- ComfyUI node for Paint3D: [ComfyUI-Paint3D-Nodes](https://github.com/N3rd00d/ComfyUI-Paint3D-Nodes?tab=readme-ov-file) by [N3rd00d](https://github.com/N3rd00d)
+
+
 
 ## 📖 Citation
 ```bib
@@ -147,8 +152,6 @@ python tools/convert_original_stable_diffusion_to_diffusers.py \
   year={2024}
 }
 ```
-
-
 
 ## Acknowledgments
 
