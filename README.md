@@ -138,6 +138,7 @@ python tools/convert_original_stable_diffusion_to_diffusers.py \
 
 ## 🧩 Projects that use Paint3D
 If you develop/use Paint3D in your projects, welcome to let me know.
+- [MeshXL](https://meshxl.github.io/)(accepted to NeurIPS 2024🔥) uses Paint3D to generate textures for their meshes.
 - ComfyUI node for Paint3D: [ComfyUI-Paint3D-Nodes](https://github.com/N3rd00d/ComfyUI-Paint3D-Nodes?tab=readme-ov-file) by [N3rd00d](https://github.com/N3rd00d)
 
 
