@@ -30,6 +30,9 @@ We present Paint3D, a novel coarse-to-fine generative framework that is capable 
 </details>
 
 ## 🚩 News
+- [2024/11/05] 🔥🔥🔥 We're excited to release [MVPaint](https://github.com/3DTopia/MVPaint), a multi-view consistent texturing method that supports arbitrary UV unwrapping and high generation flexibility.
+- [2024/09/26] 🎉🎉🎉 Our mesh generation method, [MeshXL](https://github.com/OpenMeshLab/MeshXL), has been accepted to NeurIPS 2024! It utilizes Paint3D to generate detailed mesh textures.
+- ComfyUI node for Paint3D: [ComfyUI-Paint3D-Nodes](https://github.com/N3rd00d/ComfyUI-Paint3D-Nodes?tab=readme-ov-file) by [N3rd00d](https://github.com/N3rd00d)
 - [2024/04/26] Upload code 🔥🔥🔥
 - [2023/12/21] Upload paper and init project 🔥🔥🔥
 
@@ -133,13 +136,14 @@ python tools/convert_original_stable_diffusion_to_diffusers.py \
 
 <details> <summary><b>Question-and-Answer</b></summary>
 
-
-</details> -->
-
 ## 🧩 Projects that use Paint3D
 If you develop/use Paint3D in your projects, welcome to let me know.
 - [MeshXL](https://meshxl.github.io/)(accepted to NeurIPS 2024🔥) uses Paint3D to generate textures for their meshes.
 - ComfyUI node for Paint3D: [ComfyUI-Paint3D-Nodes](https://github.com/N3rd00d/ComfyUI-Paint3D-Nodes?tab=readme-ov-file) by [N3rd00d](https://github.com/N3rd00d)
+
+</details> -->
+
+
 
 
 
